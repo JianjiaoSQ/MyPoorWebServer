@@ -98,7 +98,7 @@
 
 # Demo
 
-<div align="center"> <img src="https://wx1.sinaimg.cn/large/006UYdYPly1gt8dgyjhtfg31gw0m0b2e.gif" width="600"/> </div><br>
+<div align="center"> <img src="https://wx1.sinaimg.cn/large/006UYdYPly1gt8em4jwzmg31gw0m0qv7.gif" width="600"/> </div><br>
 
 # 压测
 
