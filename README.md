@@ -7,7 +7,7 @@
 
 ## 服务器编程框架
 
-![](pic/服务器框架.png)
+<div align=center><img src="https://wx1.sinaimg.cn/mw2000/006UYdYPly1gt8dgz48ybj30ry0d475m.jpg" width="700"></div>
 
 ### IO 处理单元
 
@@ -24,14 +24,15 @@
 
   **Reactor** 主线程（IO处理单元）只负责监听文件描述符是否有事件发生，有的话则通知工作线程（逻辑单元，线程池中的线程），主线程没有作任何其他实质性工作；读写数据、接受新连接、处理客户请求均在工作线程中完成；因此主线程往 epoll 内核事件表中注册的是 cocket 上的**就绪事件**；
 
-  ![](../pic/Reactor.png)
+  <div align=center><img src="https://wx1.sinaimg.cn/mw2000/006UYdYPly1gt8dgw53qgj30yz0b8taq.jpg" width="700"></div>
 
   **Proactor** IO 操作都交给主线程完成，工作线程只负责业务逻辑处理（即本项目中的报文解析和生成应答报文），因此主线程往 epoll内核事件表中注册的是 **读完成事件**，工作线程业务处理完成后往 epoll 内核事件表注册 **写完成事件**；
 
-  ![](../pic/Proactor.png)
+  <div align=center><img src="https://wx1.sinaimg.cn/mw2000/006UYdYPly1gt8dgvzdbuj310f0agdi7.jpg" width="700"></div>
 
   **模拟 Proactor** 
-  ![](../pic/模拟Proactor.png)
+  <div align=center><img src="https://wx1.sinaimg.cn/mw2000/006UYdYPly1gt8dgzbvahj60zo0mtjux02.jpg" width="700"></div>
+
 
 
 * **并发模型**
@@ -52,7 +53,7 @@
   - 同步线程简单，能同时处理多个请求；异步线程，实时性强，执行效率高；—— 工作线程
   - 同步线程用于处理客户逻辑；异步线程用于处理IO事件；—— 主线程
   
-  ![](pic/半同步_半反应堆.png)
+  <div align=center><img src="https://wx1.sinaimg.cn/mw2000/006UYdYPly1gt8dgytlojj30sg0d8wgq.jpg" width="700"></div>
 
 * 领导者/追随者模式
   - 也就是不停的换领导者，先推选新的领导者，自己去处理接受的IO读写和逻辑，新的领导者继续监听新的连接；缺点就是仅支持一个事件源集合；
@@ -60,13 +61,13 @@
 ### 逻辑处理
 * 有限状态机
   - 主从状态机应用：HTTP 报文的读取与解析
-  
-  ![](pic/主从状态机.png)
-  ———————— 图片来源见水印 —————————
+
+  <div align=center><img src="https://wx1.sinaimg.cn/mw2000/006UYdYPly1gt8dgzi8ywj30u00dugto.jpg" width="700"></div>
+  <center>——— 图片来源见水印 ———</center>
 
   主状态机三个状态：CHECK_STATE_REQUESTLINE（请求行）CHECK_STATE_HEADER（请求头）CHECK_STATE_CONTENT（消息体 - 仅用于 POST）
 
-  ![](pic/从状态机.png)
+  <div align=center><img src="https://wx1.sinaimg.cn/mw2000/006UYdYPly1gt8dgyz6ogj30il0fn0up.jpg" width="700"></div>
 
   从状态机三个状态：LINE_OK,LINE_OPEN,LINE_BAD
 
@@ -79,7 +80,7 @@
 
 在 游双《Linux高性能服务器》书中，提供了详细的代码及说明；
 
-<div align="center"> <img src="pic/Linux高性能服务器.png" width="200"/> </div><br>
+<div align="center"> <img src="https://wx1.sinaimg.cn/mw2000/006UYdYPly1gt8dgvpfxkj30ra0zhk0x.jpg" width="200"/> </div><br>
 
 * 三种锁：信号量、互斥锁、条件变量
   - 半同步/半反应堆：信号量或者条件变量
@@ -97,13 +98,13 @@
 
 # Demo
 
-<div align="center"> <img src="pic/understand_this_project.gif" width="600"/> </div><br>
+<div align="center"> <img src="https://wx1.sinaimg.cn/large/006UYdYPly1gt8dgyjhtfg31gw0m0b2e.gif" width="600"/> </div><br>
 
 # 压测
 
 实现近10K的并发量；
 
-<div align="center"> <img src="pic/concurrent.png" width="600"/> </div><br>
+<div align="center"> <img src="https://wx1.sinaimg.cn/mw2000/006UYdYPly1gt8dgv9oxkj30q00700xc.jpg" width="600"/> </div><br>
 
 # 下一步
 
@@ -163,13 +164,6 @@ Browser:
 
 书籍《Linux高性能服务器编程》- 游双著；
 
-<div align="center"> <img src="pic/Linux高性能服务器.png" width="200"/> </div><br>
+<div align="center"> <img src="https://wx1.sinaimg.cn/mw2000/006UYdYPly1gt8dgvpfxkj30ra0zhk0x.jpg" width="200"/> </div><br>
 
 Github作者： 在此大佬代码基础上修改[@qinguoyi](https://github.com/qinguoyi)
-
-
-
-
-
-
-  
