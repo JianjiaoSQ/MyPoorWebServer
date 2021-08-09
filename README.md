@@ -31,6 +31,7 @@
   <div align=center><img src="https://wx1.sinaimg.cn/mw2000/006UYdYPly1gt8dgvzdbuj310f0agdi7.jpg" width="700"></div>
 
   **模拟 Proactor** 
+  
   <div align=center><img src="https://wx1.sinaimg.cn/mw2000/006UYdYPly1gt8dgzbvahj60zo0mtjux02.jpg" width="700"></div>
 
 
@@ -63,7 +64,7 @@
   - 主从状态机应用：HTTP 报文的读取与解析
 
   <div align=center><img src="https://wx1.sinaimg.cn/mw2000/006UYdYPly1gt8dgzi8ywj30u00dugto.jpg" width="700"></div>
-  <center>——— 图片来源见水印 ———</center>
+  <center> ——— 图片来源见水印 ——— </center>
 
   主状态机三个状态：CHECK_STATE_REQUESTLINE（请求行）CHECK_STATE_HEADER（请求头）CHECK_STATE_CONTENT（消息体 - 仅用于 POST）
 
